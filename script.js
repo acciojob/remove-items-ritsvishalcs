@@ -1,8 +1,15 @@
-//your JS code here. If required.
-function removeColor() {
-    // Get the select element
-    const select = document.getElementById("colorSelect");
+// Add event listener after DOM loads
+window.onload = function () {
+    // Get reference to the button
+    const button = document.querySelector('input[type="button"]');
 
-    // Remove the selected option
-    select.remove(select.selectedIndex);
-}
+    // Attach click handler
+    button.addEventListener('click', function () {
+        const select = document.getElementById('colorSelect');
+
+        // Remove the selected option if there is one
+        if (select.selectedIndex !== -1) {
+            select.remove(select.selectedIndex);
+        }
+    });
+};
